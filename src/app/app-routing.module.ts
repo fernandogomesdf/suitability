@@ -4,8 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'suitability',
     pathMatch: 'full'
+  },
+  {
+    path: 'suitability',
+    loadChildren: () => import('./suitability/suitability.module').then( m => m.SuitabilityPageModule)
   },
   {
     path: 'folder/:id',
