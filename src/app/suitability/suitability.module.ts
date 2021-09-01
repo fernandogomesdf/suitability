@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { CardModule } from 'primeng/card';
+import {TabViewModule} from 'primeng/tabview';
+import {AccordionModule} from 'primeng/accordion';
+
+
 import { SuitabilityPageRoutingModule } from './suitability-routing.module';
 
 import { SuitabilityPage } from './suitability.page';
@@ -13,8 +18,11 @@ import { SuitabilityPage } from './suitability.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SuitabilityPageRoutingModule
+    SuitabilityPageRoutingModule,
+    CardModule,
+    TabViewModule,
+    AccordionModule
   ],
   declarations: [SuitabilityPage]
 })
-export class SuitabilityPageModule {}
+export class SuitabilityPageModule { }
