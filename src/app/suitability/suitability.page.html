@@ -10,19 +10,47 @@
 <ion-content>
   <div style="padding: 20px;">
     <p-card>
+
+      Cliente : <b>Ronaldo Cappellesso</b> <br><br>
+
       <p-accordion>
         <p-accordionTab>
           <ng-template pTemplate="header">
-            <ion-icon name="checkmark-circle-outline"></ion-icon> &nbsp;&nbsp; 1. Como classificaria sua
-            experiência de
-            investimentos?
+            <ion-icon name="checkmark-circle-outline" style="padding-right: 5px;" *ngIf="suitability.q1"></ion-icon> 1.
+            Como classificaria sua
+            experiência de investimentos?
           </ng-template>
-          Content 1
+
+          <p-radioButton name="q1" value="1" [(ngModel)]="suitability.q1"
+            label="Tenho pouca experiência em investimentos em geral"></p-radioButton><br>
+          <p-radioButton name="q1" value="2" [(ngModel)]="suitability.q1"
+            label="Tenho experiência com investimentos com pouca probabilidade de perda"></p-radioButton><br>
+          <p-radioButton name="q1" value="3" [(ngModel)]="suitability.q1"
+            label="Tenho experiência com investimentos com média probabilidade de perda"></p-radioButton><br>
+          <p-radioButton name="q1" value="4" [(ngModel)]="suitability.q1"
+            label="Sinto-me seguro em tomar minhas decisões de investimento e estou apto a entender e ponderar os riscos associados">
+          </p-radioButton>
         </p-accordionTab>
-        <p-accordionTab
-          header="2. Dentre os fundos de investimentos abaixo, e seus respectivos possíveis rendimentos, qual representaria sua opção de investimento preferido?">
-          Content 2
+        <p-accordionTab header="">
+          <ng-template pTemplate="header">
+            <ion-icon name="checkmark-circle-outline" style="padding-right: 5px;" *ngIf="suitability.q2"></ion-icon>
+            2. Dentre os fundos de investimentos abaixo, e seus respectivos possíveis rendimentos, qual representaria
+            sua opção de investimento preferido?
+          </ng-template>
+
+          <p-radioButton name="q2" value="1" [(ngModel)]="suitability.q2"
+            label="Investimento A - Médio 8,00% | Máximo 8,80% | Mínimo 7,20%"></p-radioButton><br>
+          <p-radioButton name="q2" value="2" [(ngModel)]="suitability.q2"
+            label="Investimento B - Médio 9,50% | Máximo 11,00% | Mínimo 4,40%"></p-radioButton><br>
+          <p-radioButton name="q2" value="3" [(ngModel)]="suitability.q2"
+            label="Investimento C - Médio 10,50% | Máximo 14,90% | Mínimo 2,10%"></p-radioButton><br>
+          <p-radioButton name="q2" value="4" [(ngModel)]="suitability.q2"
+            label="Investimento D - Médio 12,20% | Máximo 18,06% | Mínimo -5,25%"></p-radioButton><br>
+          <p-radioButton name="q2" value="5" [(ngModel)]="suitability.q2"
+            label="Investimento E - Médio 25,00% | Máximo 75,00% | Mínimo -45,00%"></p-radioButton><br>
         </p-accordionTab>
+
+
         <p-accordionTab header="3. Qual o nível de riscos que você pretende assumir com os seus investimentos?">
           Content 3
         </p-accordionTab>
@@ -35,6 +63,7 @@
         </p-accordionTab>
       </p-accordion>
 
+      {{suitability | json}}
 
     </p-card>
   </div>

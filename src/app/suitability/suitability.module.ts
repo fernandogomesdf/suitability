@@ -5,8 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CardModule } from 'primeng/card';
-import {TabViewModule} from 'primeng/tabview';
-import {AccordionModule} from 'primeng/accordion';
+import { TabViewModule } from 'primeng/tabview';
+import { AccordionModule } from 'primeng/accordion';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 import { SuitabilityPageRoutingModule } from './suitability-routing.module';
@@ -21,7 +23,9 @@ import { SuitabilityPage } from './suitability.page';
     SuitabilityPageRoutingModule,
     CardModule,
     TabViewModule,
-    AccordionModule
+    AccordionModule,
+    CheckboxModule,
+    RadioButtonModule
   ],
   declarations: [SuitabilityPage]
 })
