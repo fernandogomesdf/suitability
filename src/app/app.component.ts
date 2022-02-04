@@ -12,5 +12,5 @@ export class AppComponent {
     { title: 'Sair', url: '/folder/Spam', icon: 'power' },
   ];
 
-  constructor() {}
+  constructor() { }
 }
