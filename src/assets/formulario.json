@@ -27,13 +27,270 @@
           "resposta" : "Investimento A - Médio 8,00% | Máximo 8,80% | Mínimo 7,20%"
         },
         {
-          "resposta" : "Investimento A - Médio 8,00% | Máximo 8,80% | Mínimo 7,20%"
+          "resposta" : "Investimento B - Médio 9,50% | Máximo 11,00% | Mínimo 4,40%"
+        },
+        {
+          "resposta" : "Investimento C - Médio 10,50% | Máximo 14,90% | Mínimo 2,10%"
         },
         {
           "resposta" : "Investimento D - Médio 12,20% | Máximo 18,06% | Mínimo -5,25%"
         },
         {
           "resposta" : "Investimento E - Médio 25,00% | Máximo 75,00% | Mínimo -45,00%"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Qual o nível de riscos que você pretende assumir com os seus investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "Não pretendo assumir riscos com meus investimentos"
+        },
+        {
+          "resposta" : "Nível baixo de risco, com pouco oscilação"
+        },
+        {
+          "resposta" : "Nível médio de risco, mas sem incorrer em variações negativas"
+        },
+        {
+          "resposta" : "Nível alto de risco, com eventuais variações negativas"
+        },
+        {
+          "resposta" : "Nível elevado de risco, com potencial de perdas significativas"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Em seus investimentos pessoais, qual parcela você irá precisar de liquidez imediata nos próximos 12 meses?",
+      "alternativas" : [
+        {
+          "resposta" : "80 % a 100 %"
+        },
+        {
+          "resposta" : "51 % a 80 %"
+        },
+        {
+          "resposta" : "31 % a 50 %"
+        },
+        {
+          "resposta" : "11 % a 30 %"
+        },
+        {
+          "resposta" : "0 % a 10 %"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Em qual estágio de investimento você se encontra nesse momento?",
+      "alternativas" : [
+        {
+          "resposta" : "Fundação / Acumulação de riqueza – Formando reservas e acumulando riquezas para atingir objetivos e iniciar o planejamento da independência financeira. Possivelmente ainda em ascensão de carreira"
+        },
+        {
+          "resposta" : "Conservação / Proteção de Capital – Já atingiu boa parte dos objetivos financeiros, mas ainda busca elevar as riquezas para proporcionar maior conforto durante a independência financeira e para poder realizar mais alguns objetivos"
+        },
+        {
+          "resposta" : " Distribuição de Riqueza / Geração de Renda – Já utiliza ou pretende utilizar patrimônio acumulado para gerar ou aumentar rendimentos mensais e desfrutar da independência financeira. O planejamento sucessório já pode ser necessário"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Qual das opções abaixo melhor define seu objetivo de investimento no futuro?",
+      "alternativas" : [
+        {
+          "resposta" : "Preservação de capital – O objetivo é obter um retorno suficiente para compensar a inflação, mantendo o valor real do capital constante, sem se expor a um nível elevado"
+        },
+        {
+          "resposta" : "Geração de renda – O objetivo é obter um retorno constante como fonte de renda, gerando um rendimento regular, aceitando um nível de risco moderado"
+        },
+        {
+          "resposta" : "Aumento de capital – O objetivo é obter um retorno acima da inflação, resultando no aumento do capital investido, aceitando incorrer em alto nível de risco"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Em relação aos riscos existentes, como você reagiria ao verificar que, após o período de 06 meses, os investimentos apresentassem rentabilidade ruim?",
+      "alternativas" : [
+        {
+          "resposta" : "Resgataria imediatamente a totalidade valor aplicado"
+        },
+        {
+          "resposta" : "Efetuaria um resgate parcial dos investimentos"
+        },
+        {
+          "resposta" : "Seguiria com as orientações do meu assessor de investimentos, independentemente do resultado"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : " Como você toma / pretende tomar suas decisões de investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "Tomo minhas decisões por conta própria"
+        },
+        {
+          "resposta" : "Baseio-me na análise de especialistas, mas decido sozinho"
+        },
+        {
+          "resposta" : "Espero opções e análises do meu assessor de investimentos"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Como você gostaria que esta consultoria ajudasse no seu entendimento sobre o mercado financeiro?",
+      "alternativas" : [
+        {
+          "resposta" : "Pretendo seguir as recomendações sem me aprofundar em questões técnicas"
+        },
+        {
+          "resposta" : "Gostaria de aprender o básico sobre o mercado e os investimentos sugeridos"
+        },
+        {
+          "resposta" : "Gostaria de aprofundar meus conhecimentos sobre finanças"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Quanto tempo você possui os mesmos investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "Não tenho investimentos"
+        },
+        {
+          "resposta" : "Até 1 ano"
+        },
+        {
+          "resposta" : "Entre 1 e 3 anos"
+        },
+        {
+          "resposta" : "Mais de 3 anos"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Em quanto tempo você espera resgatar 100% da sua carteira de investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "Até 6 meses"
+        },
+        {
+          "resposta" : "De 7 meses a 3 anos"
+        },
+        {
+          "resposta" : "De 3 a 5 anos"
+        },
+        {
+          "resposta" : "De 6 a 10 anos"
+        },
+        {
+          "resposta" : "Acima de 10 anos"
+        }
+      ]
+    },
+    {
+      "tipo" : "check",
+      "pergunta" : "Marque se possui experiência em algumas das opções de investimento a baixo",
+      "alternativas" : [
+        {
+          "resposta" : "Ações ou Participações Societárias"
+        },
+        {
+          "resposta" : "Derivativos"
+        },
+        {
+          "resposta" : "CDB"
+        },
+        {
+          "resposta" : "Fundos de Investimento de Ações"
+        },
+        {
+          "resposta" : "Fundos de Investimento Multimercado"
+        },
+        {
+          "resposta" : "Fundos de Investimento de Renda Fixa"
+        },
+        {
+          "resposta" : "Fundos de Investimento de Renda Fixa Médio e Alto Risco"
+        },
+        {
+          "resposta" : "Fundos de Previdência"
+        },
+        {
+          "resposta" : "Fundos DI"
+        },
+        {
+          "resposta" : "Títulos Públicos"
+        },
+        {
+          "resposta" : "Imóveis"
+        },
+        {
+          "resposta" : "Poupança"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Qual percentual de sua renda você investe regularmente?",
+      "alternativas" : [
+        {
+          "resposta" : "Até 10 %"
+        },
+        {
+          "resposta" : "Entre 11% e 20%"
+        },
+        {
+          "resposta" : "Entre 21% e 30%"
+        },
+        {
+          "resposta" : "Entre 31% e 40%"
+        },
+        {
+          "resposta" : "Acima de 40%"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Com qual frequência você avalia o desempenho da sua carteira de investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "O objetivo é rentabilizar o patrimônio no longo prazo, não tenho pretensão de modificar os investimentos antes de 5 anos"
+        },
+        {
+          "resposta" : "O objetivo é rentabilizar o patrimônio no longo prazo, não tenho pretensão de modificar os investimentos antes de 2 anos"
+        },
+        {
+          "resposta" : "Poderá alterar ou resgatar investimentos em até 6 meses"
+        },
+        {
+          "resposta" : "Procurar as melhores oportunidades no mercado e com a possibilidade de modificar a carteira de investimentos mensalmente"
+        },
+        {
+          "resposta" : "Alterar os investimentos de acordo com as flutuações diárias do mercado financeiro"
+        }
+      ]
+    },
+    {
+      "tipo" : "input",
+      "pergunta" : "Como imagina sua independência financeira?",
+      "alternativas" : [
+        {
+          "resposta" : "Idade",
+          "mask" : "integer"
+        },
+        {
+          "resposta" : "Renda Mensal Desejada",
+          "mask" : "money"
         }
       ]
     }
