@@ -8,7 +8,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Suitability', url: '/suitability', icon: 'business' },
     { title: 'Clientes', url: '/folder/Outbox', icon: 'person' },
-    { title: 'ConfiguraÃ§Ãµes', url: '/folder/Config', icon: 'settings' },
+    { title: 'Configurações', url: '/folder/Config', icon: 'settings' },
     { title: 'Sair', url: '/folder/Spam', icon: 'power' },
   ];
 
