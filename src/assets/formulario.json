@@ -1,0 +1,43 @@
+{
+  "id" : "form1",
+  "perguntas" : [
+    {
+      "tipo" : "radio",
+      "pergunta" : "Como classificaria sua experiência de investimentos?",
+      "alternativas" : [
+        {
+          "resposta" : "Tenho pouca experiência em investimentos em geral"
+        },
+        {
+          "resposta" : "Tenho experiência com investimentos com pouca probabilidade de perda"
+        },
+        {
+          "resposta" : "Tenho experiência com investimentos com média probabilidade de perda"
+        },
+        {
+          "resposta" : "Sinto-me seguro em tomar minhas decisões de investimento e estou apto a entender e ponderar os riscos associados"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Dentre os fundos de investimentos abaixo, e seus respectivos possíveis rendimentos, qual representaria sua opção de investimento preferido",
+      "alternativas" : [
+        {
+          "resposta" : "Investimento A - Médio 8,00% | Máximo 8,80% | Mínimo 7,20%"
+        },
+        {
+          "resposta" : "Investimento A - Médio 8,00% | Máximo 8,80% | Mínimo 7,20%"
+        },
+        {
+          "resposta" : "Investimento D - Médio 12,20% | Máximo 18,06% | Mínimo -5,25%"
+        },
+        {
+          "resposta" : "Investimento E - Médio 25,00% | Máximo 75,00% | Mínimo -45,00%"
+        }
+      ]
+    }
+  ]
+}
+
+

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-suitability',
@@ -8,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class SuitabilityPage implements OnInit {
 
   suitability: any = {};
+  formulario: any = {};
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.http.get('./assets/formulario.json').subscribe(data => {
+      this.formulario = data;
+    });
+  }
 
   ngOnInit() {
   }
-
 }

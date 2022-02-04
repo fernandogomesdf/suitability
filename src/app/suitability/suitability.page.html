@@ -13,6 +13,33 @@
 
       Cliente : <b>Ronaldo Cappellesso</b> <br><br>
 
+
+      <p-accordion>
+
+
+
+        <p-accordionTab *ngFor="let item of formulario.perguntas; index as ip;">
+          <ng-template pTemplate="header">
+            <ion-icon name="checkmark-circle-outline" style="padding-right: 5px;" *ngIf="suitability['q'+ip] >= 0"></ion-icon>
+            {{ip+1}}. {{item.pergunta}}
+          </ng-template>
+
+
+          <div class="card">
+            <div class="flex flex-row" *ngFor="let item of item.alternativas; index as ia;">
+              <p-radioButton [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
+              [label]="item.resposta"></p-radioButton>
+            </div>
+        </div>
+
+
+
+        </p-accordionTab>
+      </p-accordion>
+
+
+<br/><br/><br/><br/><br/><br/>
+
       <p-accordion>
         <p-accordionTab>
           <ng-template pTemplate="header">
