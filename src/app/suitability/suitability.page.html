@@ -38,14 +38,25 @@
 
           <div class="card" *ngIf="item.tipo === 'input'">
             <div class="grid pt-2">
-              <div  class="col-6" *ngFor="let item of item.alternativas; index as ia;">
+              <div  class="col-6 pb-4" *ngFor="let item of item.alternativas; index as ia;">
                 <span class="p-float-label">
                   <input [id]="'q'+ip+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ia]" pInputText [size]="item.size"/>
                   <label [for]="'q'+ip+'-'+ia">{{item.resposta}}</label>
                 </span>
               </div>
-
             </div>
+          </div>
+
+          <div class="card p-3" *ngIf="item.tipo === 'list'">
+            <span class="grid" *ngFor="let linha of [].constructor(item.quantidade); let ii = index">
+
+              <span [class]="'col-'+l+' pr-4 pb-5'" *ngFor="let item of item.alternativas; index as ia; let l = count">
+                <span class="p-float-label">
+                  <input [id]="'q'+ip+'-'+ii+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ii+'-'+ia]" pInputText [size]="item.size"/>
+                  <label [for]="'q'+ip+'-'+ii+'-'+ia">{{item.resposta}}</label>
+                </span>
+              </span>
+            </span>
           </div>
 
         </p-accordionTab>

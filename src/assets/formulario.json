@@ -285,14 +285,125 @@
       "pergunta" : "Como imagina sua independência financeira?",
       "alternativas" : [
         {
-          "formName" : "idade",
           "resposta" : "Idade",
           "mask" : "integer",
           "size" : "10"
         },
         {
-          "formName" : "renda",
           "resposta" : "Renda Mensal Desejada",
+          "mask" : "money",
+          "size" : "40"
+        }
+      ]
+    },
+    {
+      "tipo" : "input",
+      "pergunta" : "Quais suas proteções atuais?",
+      "alternativas" : [
+        {
+          "resposta" : "Reserva de Emergência",
+          "mask" : "money",
+          "size" : "20"
+        },
+        {
+          "resposta" : "Seguro de Vida",
+          "mask" : "text",
+          "size" : "40"
+        },
+        {
+          "resposta" : "Plano de Saúde",
+          "mask" : "text",
+          "size" : "40"
+        },
+        {
+          "resposta" : "Seguro Residencial",
+          "mask" : "text",
+          "size" : "40"
+        },
+        {
+          "resposta" : "Outros",
+          "mask" : "text",
+          "size" : "40"
+        }
+      ]
+    },
+    {
+      "tipo" : "radio",
+      "pergunta" : "Declara imposto de renda?",
+      "alternativas" : [
+        {
+          "resposta" : "Sim, em formulário simplificado"
+        },
+        {
+          "resposta" : "Sim, em formulário completo"
+        },
+        {
+          "resposta" : "Não"
+        }
+      ]
+    },
+    {
+      "tipo" : "check",
+      "pergunta" : "Informe a origem dos recursos que compõem o patrimônio",
+      "alternativas" : [
+        {
+          "resposta" : "Renda Mensal"
+        },
+        {
+          "resposta" : "Aposentadoria"
+        },
+        {
+          "resposta" : "Partilha de Bens (divórcio)"
+        },
+        {
+          "resposta" : "Aluguel de propriedades Real"
+        },
+        {
+          "resposta" : "Herança"
+        },
+        {
+          "resposta" : "Outro"
+        }
+      ]
+    },
+    {
+      "tipo" : "input",
+      "pergunta" : "Dados financeiros",
+      "alternativas" : [
+        {
+          "resposta" : "Renda mensal",
+          "mask" : "money",
+          "size" : "20"
+        },
+        {
+          "resposta" : "Gasto Médio Mensal",
+          "mask" : "money",
+          "size" : "20"
+        },
+        {
+          "resposta" : "Capacidade Máxima Mensal de Poupança",
+          "mask" : "money",
+          "size" : "35"
+        }
+      ]
+    },
+    {
+      "tipo" : "list",
+      "quantidade" : 5,
+      "pergunta" : "Patrimônio Total",
+      "alternativas" : [
+        {
+          "resposta" : "Ativo",
+          "mask" : "text",
+          "size" : "20"
+        },
+        {
+          "resposta" : "Valor",
+          "mask" : "money",
+          "size" : "20"
+        },
+        {
+          "resposta" : "Observações",
           "mask" : "money",
           "size" : "40"
         }
