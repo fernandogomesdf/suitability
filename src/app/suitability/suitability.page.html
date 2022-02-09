@@ -16,21 +16,35 @@
       <p-accordion>
         <p-accordionTab *ngFor="let item of formulario.perguntas; index as ip;">
           <ng-template pTemplate="header">
-            <ion-icon name="checkmark-circle-outline" style="padding-right: 10px; color: green;" *ngIf="suitability['q'+ip] >= 0 || suitability['q'+ip]"></ion-icon>
+            <i class="pi pi-check-circle" style="padding-right: 10px; color: green;" *ngIf="suitability['q'+ip] >= 0 || suitability['q'+ip]"></i>
             {{ip+1}}. {{item.pergunta}}
           </ng-template>
 
           <div class="card" *ngIf="item.tipo === 'radio'">
-            <div class="flex flex-row" style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
+            <div style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
               <p-radioButton [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
               [label]="item.resposta"></p-radioButton>
             </div>
           </div>
 
           <div class="card" *ngIf="item.tipo === 'check'">
-            <div class="flex flex-row" style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
-              <p-checkbox [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
-              [label]="item.resposta"></p-checkbox>
+            <div class="grid">
+              <div class="col-6" style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
+                <p-checkbox [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
+                [label]="item.resposta"></p-checkbox>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" *ngIf="item.tipo === 'input'">
+            <div class="grid pt-2">
+              <div  class="col-6" *ngFor="let item of item.alternativas; index as ia;">
+                <span class="p-float-label">
+                  <input [id]="'q'+ip+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ia]" pInputText [size]="item.size"/>
+                  <label [for]="'q'+ip+'-'+ia">{{item.resposta}}</label>
+                </span>
+              </div>
+
             </div>
           </div>
 

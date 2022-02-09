@@ -285,12 +285,16 @@
       "pergunta" : "Como imagina sua independência financeira?",
       "alternativas" : [
         {
+          "formName" : "idade",
           "resposta" : "Idade",
-          "mask" : "integer"
+          "mask" : "integer",
+          "size" : "10"
         },
         {
+          "formName" : "renda",
           "resposta" : "Renda Mensal Desejada",
-          "mask" : "money"
+          "mask" : "money",
+          "size" : "40"
         }
       ]
     }
