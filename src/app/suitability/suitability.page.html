@@ -49,7 +49,6 @@
 
           <div class="card p-3" *ngIf="item.tipo === 'list'">
             <span class="grid" *ngFor="let linha of [].constructor(item.quantidade); let ii = index">
-
               <span [class]="'col-'+l+' pr-4 pb-5'" *ngFor="let item of item.alternativas; index as ia; let l = count">
                 <span class="p-float-label">
                   <input [id]="'q'+ip+'-'+ii+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ii+'-'+ia]" pInputText [size]="item.size"/>
@@ -57,6 +56,9 @@
                 </span>
               </span>
             </span>
+            <button pButton type="button" iconPos="left" icon="pi pi-plus" label="Adicionar" class="p-button-raised" (click)="item.quantidade = item.quantidade + 1"></button>
+            &nbsp;&nbsp;
+            <button *ngIf="item.quantidade" pButton type="button" iconPos="left" icon="pi pi-minus" label="Remover" class="p-button-raised p-button-danger" (click)="item.quantidade = item.quantidade - 1"></button>
           </div>
 
         </p-accordionTab>

@@ -409,6 +409,34 @@
         }
       ]
     }
+    ,
+    {
+      "tipo" : "list",
+      "quantidade" : 5,
+      "pergunta" : "Objetivos e metas financeiras",
+      "alternativas" : [
+        {
+          "resposta" : "Objetivo",
+          "mask" : "text",
+          "size" : "10"
+        },
+        {
+          "resposta" : "Prioridade",
+          "mask" : "money",
+          "size" : "10"
+        },
+        {
+          "resposta" : "Valor",
+          "mask" : "money",
+          "size" : "10"
+        },
+        {
+          "resposta" : "Prazo",
+          "mask" : "date",
+          "size" : "10"
+        }
+      ]
+    }
   ]
 }
 

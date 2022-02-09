@@ -10,6 +10,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 
 import { SuitabilityPageRoutingModule } from './suitability-routing.module';
@@ -27,7 +28,8 @@ import { SuitabilityPage } from './suitability.page';
     AccordionModule,
     CheckboxModule,
     RadioButtonModule,
-    InputTextModule
+    InputTextModule,
+    ButtonModule
   ],
   declarations: [SuitabilityPage]
 })
