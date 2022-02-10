@@ -443,24 +443,74 @@
       "subtitulo" : "Informe o número de contas que deseja cadastrar para a liquidação de resgates<br>Com o objetivo de evitar possíveis fraudes, esta ficha cadastral só será aceita se o número assinalado acima for igual ao número de contas informadas na tabela abaixo. O envio de recursos para contas de terceiros não é autorizado. Os titulares de conta conjunta declaram estar cientes de que qualquer um dos titulares está autorizado a, isoladamente, fazer movimentações, resgates e aplicações nos fundos de investimento aderidos.",
       "alternativas" : [
         {
-          "resposta" : "Objetivo",
+          "resposta" : "Titular da Conta",
           "mask" : "text",
-          "size" : "10"
+          "size" : "20"
         },
         {
-          "resposta" : "Prioridade",
-          "mask" : "money",
-          "size" : "10"
+          "resposta" : "Nº e Nome do Banco",
+          "mask" : "text",
+          "size" : "20"
         },
         {
-          "resposta" : "Valor",
-          "mask" : "money",
-          "size" : "10"
+          "resposta" : "Nº Agência",
+          "mask" : "text",
+          "size" : "6"
         },
         {
-          "resposta" : "Prazo",
-          "mask" : "date",
-          "size" : "10"
+          "resposta" : "Nº Conta",
+          "mask" : "text",
+          "size" : "6"
+        },
+        {
+          "resposta" : "Dígito",
+          "mask" : "text",
+          "size" : "5"
+        }
+      ]
+    },
+    {
+      "tipo" : "check",
+      "pergunta" : "QUestionário de saúde",
+      "alternativas" : [
+        {
+          "resposta" : "Já teve doença grave"
+        },
+        {
+          "resposta" : "É fumante ou diabético"
+        },
+        {
+          "resposta" : "Pratica atividade de alto risco"
+        },
+        {
+          "resposta" : "Existe doença familiar relevante"
+        }
+      ]
+    },
+    {
+      "tipo" : "check",
+      "pergunta" : "Documentos necessários entregue",
+      "alternativas" : [
+        {
+          "resposta" : "Declaração de Imposto sobre a Renda"
+        },
+        {
+          "resposta" : "RG / CPF"
+        },
+        {
+          "resposta" : "Comprovante de Residência"
+        },
+        {
+          "resposta" : "Extratos de investimentos"
+        },
+        {
+          "resposta" : "Extratos de previdência"
+        },
+        {
+          "resposta" : "Extratos de financiamentos, consórcios, empréstimos"
+        },
+        {
+          "resposta" : "Apólices de Seguros contratados"
         }
       ]
     }

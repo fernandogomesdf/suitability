@@ -68,7 +68,12 @@
         </p-accordionTab>
       </p-accordion>
 
-      {{suitability | json}}
+      <div class="card">
+        <div class="flex flex-row-reverse">
+          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-send" class="p-button-raised" label="Enviar"></button></div>
+          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-save" class="p-button-raised" label="Salvar"></button></div>
+        </div>
+    </div>
 
     </p-card>
   </div>
