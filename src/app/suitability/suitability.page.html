@@ -47,9 +47,13 @@
             </div>
           </div>
 
-          <div class="card p-3" *ngIf="item.tipo === 'list'">
-            <span class="grid" *ngFor="let linha of [].constructor(item.quantidade); let ii = index">
-              <span [class]="'col-'+l+' pr-4 pb-5'" *ngFor="let item of item.alternativas; index as ia; let l = count">
+          <div class="card" *ngIf="item.tipo === 'list'">
+            <span *ngIf="item.subtitulo;else other_content"><span class="text-xs" [innerHTML]="item.subtitulo"></span><br><br><br></span>
+
+            <ng-template #other_content><br></ng-template>
+
+            <span class="flex" *ngFor="let linha of [].constructor(item.quantidade); let ii = index">
+              <span [class]="'flex-initial flex pr-3 pb-5'" *ngFor="let item of item.alternativas; index as ia; let l = count">
                 <span class="p-float-label">
                   <input [id]="'q'+ip+'-'+ii+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ii+'-'+ia]" pInputText [size]="item.size"/>
                   <label [for]="'q'+ip+'-'+ii+'-'+ia">{{item.resposta}}</label>
