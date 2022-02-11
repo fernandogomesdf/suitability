@@ -471,7 +471,7 @@
     },
     {
       "tipo" : "check",
-      "pergunta" : "QUestionário de saúde",
+      "pergunta" : "Questionário de saúde",
       "alternativas" : [
         {
           "resposta" : "Já teve doença grave"
