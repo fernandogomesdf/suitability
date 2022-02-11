@@ -1,3 +1,6 @@
+import { AppService } from './app.service';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -18,8 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     CardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    HttpClientModule,
+    ToastModule],
+  providers: [MessageService, AppService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

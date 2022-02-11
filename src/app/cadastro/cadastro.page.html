@@ -13,6 +13,7 @@
       <div class="grid">
         <div class="col"></div>
         <div class="col">
+
           <p-panel header="Cadastro">
             <div class="card pt-2">
 
@@ -40,9 +41,25 @@
 
               <div class="pb-5">
                 <span class="p-float-label">
-                  <input id="senha" type="text" [(ngModel)]="formulario.senha" pInputText size="50" />
+                  <input id="senha" type="password" [feedback]="false" pPassword [(ngModel)]="formulario.senha"
+                    size="50" />
                   <label for="senha">Senha</label>
                 </span>
+              </div>
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="repitasenha" [feedback]="false" type="password" pPassword
+                    [(ngModel)]="formulario.repitasenha" size="50" />
+                  <label for="repitasenha">Repita a Senha</label>
+                </span>
+              </div>
+
+              <div class="card">
+                <div class="flex flex-row-reverse">
+                  <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-plus" class="p-button-raised"
+                      label="Cadastrar"></button></div>
+                </div>
               </div>
 
             </div>

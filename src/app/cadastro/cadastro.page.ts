@@ -1,3 +1,4 @@
+import { AppService } from './../app.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,15 @@ export class CadastroPage implements OnInit {
 
   formulario: any = {};
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+  }
+
+  cadastrar() {
+    if (!this.formulario.nomeEmpresa) {
+      this.appService.msgWarn('O nome da empresa é necessário.');
+    }
   }
 
 }

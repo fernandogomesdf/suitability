@@ -14,31 +14,33 @@
       <p-accordion>
         <p-accordionTab *ngFor="let item of formulario.perguntas; index as ip;">
           <ng-template pTemplate="header">
-            <i class="pi pi-check-circle" style="padding-right: 10px; color: green;" *ngIf="suitability['q'+ip] >= 0 || suitability['q'+ip]"></i>
+            <i class="pi pi-check-circle" style="padding-right: 10px; color: green;"
+              *ngIf="suitability['q'+ip] >= 0 || suitability['q'+ip]"></i>
             {{ip+1}}. {{item.pergunta}}
           </ng-template>
 
           <div class="card" *ngIf="item.tipo === 'radio'">
             <div style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
-              <p-radioButton [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
-              [label]="item.resposta"></p-radioButton>
+              <p-radioButton [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]" [label]="item.resposta">
+              </p-radioButton>
             </div>
           </div>
 
           <div class="card" *ngIf="item.tipo === 'check'">
             <div class="grid">
               <div class="col-6" style="padding-bottom: 10px;" *ngFor="let item of item.alternativas; index as ia;">
-                <p-checkbox [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]"
-                [label]="item.resposta"></p-checkbox>
+                <p-checkbox [name]="'q'+ip" [value]="ia" [(ngModel)]="suitability['q'+ip]" [label]="item.resposta">
+                </p-checkbox>
               </div>
             </div>
           </div>
 
           <div class="card" *ngIf="item.tipo === 'input'">
             <div class="grid pt-2">
-              <div  class="col-6 pb-4" *ngFor="let item of item.alternativas; index as ia;">
+              <div class="col-6 pb-4" *ngFor="let item of item.alternativas; index as ia;">
                 <span class="p-float-label">
-                  <input [id]="'q'+ip+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ia]" pInputText [size]="item.size"/>
+                  <input [id]="'q'+ip+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ia]" pInputText
+                    [size]="item.size" />
                   <label [for]="'q'+ip+'-'+ia">{{item.resposta}}</label>
                 </span>
               </div>
@@ -46,21 +48,26 @@
           </div>
 
           <div class="card" *ngIf="item.tipo === 'list'">
-            <span *ngIf="item.subtitulo;else other_content"><span class="text-xs" [innerHTML]="item.subtitulo"></span><br><br><br></span>
+            <span *ngIf="item.subtitulo;else other_content"><span class="text-xs"
+                [innerHTML]="item.subtitulo"></span><br><br><br></span>
 
             <ng-template #other_content><br></ng-template>
 
             <span class="flex" *ngFor="let linha of [].constructor(item.quantidade); let ii = index">
-              <span [class]="'flex-initial flex pr-3 pb-5'" *ngFor="let item of item.alternativas; index as ia; let l = count">
+              <span [class]="'flex-initial flex pr-3 pb-5'"
+                *ngFor="let item of item.alternativas; index as ia; let l = count">
                 <span class="p-float-label">
-                  <input [id]="'q'+ip+'-'+ii+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ii+'-'+ia]" pInputText [size]="item.size"/>
+                  <input [id]="'q'+ip+'-'+ii+'-'+ia" type="text" [(ngModel)]="suitability['q'+ip+'-'+ii+'-'+ia]"
+                    pInputText [size]="item.size" />
                   <label [for]="'q'+ip+'-'+ii+'-'+ia">{{item.resposta}}</label>
                 </span>
               </span>
             </span>
-            <button pButton type="button" iconPos="left" icon="pi pi-plus" label="Adicionar" class="p-button-raised" (click)="item.quantidade = item.quantidade + 1"></button>
+            <button pButton type="button" iconPos="left" icon="pi pi-plus" label="Adicionar" class="p-button-raised"
+              (click)="item.quantidade = item.quantidade + 1"></button>
             &nbsp;&nbsp;
-            <button *ngIf="item.quantidade" pButton type="button" iconPos="left" icon="pi pi-minus" label="Remover" class="p-button-raised p-button-danger" (click)="item.quantidade = item.quantidade - 1"></button>
+            <button *ngIf="item.quantidade" pButton type="button" iconPos="left" icon="pi pi-minus" label="Remover"
+              class="p-button-raised p-button-danger" (click)="item.quantidade = item.quantidade - 1"></button>
           </div>
 
         </p-accordionTab>
@@ -68,10 +75,12 @@
 
       <div class="card">
         <div class="flex flex-row-reverse">
-          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-send" class="p-button-raised" label="Enviar"></button></div>
-          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-save" class="p-button-raised" label="Salvar"></button></div>
+          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-send" class="p-button-raised"
+              label="Enviar"></button></div>
+          <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-save" class="p-button-raised"
+              label="Salvar"></button></div>
         </div>
-    </div>
+      </div>
 
     </p-card>
   </div>
