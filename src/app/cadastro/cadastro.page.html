@@ -3,14 +3,53 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Cadastro</ion-title>
+    <ion-title>B4A Investimentos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <div class="p-2">
-    <p-card></p-card>
-  </div>
+    <p-card>
+      <div class="grid">
+        <div class="col"></div>
+        <div class="col">
+          <p-panel header="Cadastro">
+            <div class="card pt-2">
 
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="nomeEmpresa" type="text" [(ngModel)]="formulario.nomeEmpresa" pInputText size="50" />
+                  <label for="nomeEmpresa">Nome da Empresa</label>
+                </span>
+              </div>
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="nomeResponsavel" type="text" [(ngModel)]="formulario.nomeResponsavel" pInputText
+                    size="50" />
+                  <label for="nomeEmpresa">Nome do Responsável</label>
+                </span>
+              </div>
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="email" type="text" [(ngModel)]="formulario.email" pInputText size="50" />
+                  <label for="email">E-mail</label>
+                </span>
+              </div>
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="senha" type="text" [(ngModel)]="formulario.senha" pInputText size="50" />
+                  <label for="senha">Senha</label>
+                </span>
+              </div>
+
+            </div>
+          </p-panel>
+        </div>
+        <div class="col"></div>
+      </div>
+    </p-card>
+  </div>
 </ion-content>
