@@ -1,8 +1,9 @@
+import { HeaderComponent } from './../header/header.component';
 import { AppService } from './../app.service';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -29,7 +30,8 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     ToastModule
   ],
-  declarations: [CadastroPage],
-  providers: [MessageService, AppService]
+  declarations: [CadastroPage, HeaderComponent],
+  providers: [MessageService, AppService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CadastroPageModule { }
