@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
           rotaRequerida = '/' + rotaRequerida.replace(/,/g, '/');
           this.router.navigate([rotaRequerida]);
         } else {
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         }
         sessionStorage.removeItem('rotarequerida');
       }

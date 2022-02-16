@@ -2,7 +2,7 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" *ngIf="loginGuard.isAuthenticated()">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>B4A Investimentos</ion-title>

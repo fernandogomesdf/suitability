@@ -1,4 +1,4 @@
-import { HeaderComponent } from './header/header.component';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AppService } from './app.service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -14,6 +14,14 @@ import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+export function jwtOptionsFactory() {
+  return {
+    tokenGetter: () => sessionStorage.getItem('token'),
+    whitelistedDomains: ['localhost']
+  };
+}
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +31,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ToastModule],
+    ToastModule,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory
+      }
+    })],
   providers: [MessageService, AppService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
