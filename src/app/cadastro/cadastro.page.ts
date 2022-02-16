@@ -1,4 +1,4 @@
-import { AppService } from './../app.service';
+import { AppService, VerboHttp } from './../app.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,9 +16,7 @@ export class CadastroPage implements OnInit {
   }
 
   cadastrar() {
-    if (!this.formulario.nomeEmpresa) {
-      this.appService.msgWarn('O nome da empresa é necessário.');
-    }
+    this.appService.request('/estabelecimento/cadastrar', this.formulario, VerboHttp.PUT);
   }
 
 }

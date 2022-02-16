@@ -23,7 +23,7 @@ export class AppService {
   }
 
   getServerHostPort() {
-    let serverHostPort = location.protocol + '//localhost:8080/agendador';
+    let serverHostPort = location.protocol + '//localhost:8080/suitability';
     if ('4200' !== location.port) { // local
       serverHostPort = location.protocol + '//' + location.hostname + ':' + location.port + '/agendador';
     }
@@ -49,7 +49,7 @@ export class AppService {
   tratarErro(err) {
     try {
       if (err.status && err.status === 401) {
-        this.router.navigate(['/publico/login']);
+        this.router.navigate(['/login']);
       } else {
         if (err.error.type === 'error') {
           this.msgErro('Não foi possí­vel conectar no servidor.');
@@ -76,44 +76,11 @@ export class AppService {
     }
   }
 
-  requestPost(url: string, data: any): Observable<any> {
-    const token = sessionStorage.getItem('token');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token
-      })
-    };
-
-    const response$ = this.http.post(this.getServerHostPort() + url, data, httpOptions).pipe(
-      map(response => {
-        try {
-          return response;
-        }
-        catch (error) { return response; }
-      }),
-      share()
-    );
-    return response$;
-  }
-
-  requestGetNaoBloqueante(url: string): Observable<any> {
-    return this.requestGetPrivado(url, false, false);
-  }
-
-  requestGetExterno(url: string): Observable<any> {
-    return this.requestGetPrivado(url, true, true);
-  }
-
   requestGet(url: string): Observable<any> {
-    return this.requestGetPrivado(url, true, false);
+    return this.request(url, null, VerboHttp.GET);
   }
 
-  private requestGetPrivado(url: string, bloqueante: boolean, externo: boolean): Observable<any> {
-    this.blockEmitter.emit({
-      value: bloqueante
-    });
-
+  request(url: string, data: any, verbo: VerboHttp): Observable<any> {
     const token = sessionStorage.getItem('token');
     const httpOptions = {
       headers: new HttpHeaders({
@@ -121,16 +88,29 @@ export class AppService {
         Authorization: 'Bearer ' + token
       })
     };
-    const response$ = this.http.get((externo ? '' : this.getServerHostPort()) + url, httpOptions).pipe(
-      map(response => {
-        try {
-          return response;
-        } catch (error) {
-          return response;
-        }
-      }),
-      share()
-    );
+
+    let response$;
+    if (verbo === VerboHttp.GET) {
+      response$ = this.getMethodoHttp(verbo)(this.getServerHostPort() + url, httpOptions).pipe(
+        map(response => {
+          try {
+            return response;
+          }
+          catch (error) { return response; }
+        }),
+        share()
+      );
+    } else {
+      response$ = this.getMethodoHttp(verbo)(this.getServerHostPort() + url, data, httpOptions).pipe(
+        map(response => {
+          try {
+            return response;
+          }
+          catch (error) { return response; }
+        }),
+        share()
+      );
+    }
     return response$;
   }
 
@@ -138,5 +118,28 @@ export class AppService {
     this.messageService.add({ severity, summary, detail });
   }
 
+  private getMethodoHttp(verbo: VerboHttp) {
+    switch (verbo) {
+      case VerboHttp.PUT:
+        return this.http.put;
+      case VerboHttp.GET:
+        return this.http.get;
+      case VerboHttp.POST:
+        return this.http.post;
+      case VerboHttp.PATCH:
+        return this.http.patch;
+      case VerboHttp.DELETE:
+        return this.http.delete;
+      default:
+        break;
+    }
+  }
+}
 
+export enum VerboHttp {
+  PUT,
+  GET,
+  POST,
+  PATCH,
+  DELETE
 }

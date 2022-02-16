@@ -13,7 +13,38 @@
       <div class="grid">
         <div class="col"></div>
         <div class="col">
-          <p-panel header="Login"> </p-panel>
+          <p-card header="Login">
+
+            <div class="pt-2">
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="emailcpf" type="text" [(ngModel)]="formulario.emailcpfcnpj" pInputText size="30" />
+                  <label for="emailcpf">E-mail, CPF ou CNPJ</label>
+                </span>
+              </div>
+
+              <div class="pb-5">
+                <span class="p-float-label">
+                  <input id="senha" type="password" [feedback]="false" [(ngModel)]="formulario.senha" pPassword
+                    size="30" />
+                  <label for="senha">Senha</label>
+                </span>
+              </div>
+
+              <div class="card">
+                <div class="flex flex-row-reverse">
+
+                  <div class="flex m-2"><button pButton iconPos="left" icon="pi pi-sign-in" class="p-button-raised"
+                      label="Login" (click)="login()"></button></div>
+
+                  <div class="flex m-2"><button pButton iconPos="left" class="p-button-raised"
+                      label="Cadastro" (click)="cadastro()"></button></div>
+                </div>
+              </div>
+
+            </div>
+          </p-card>
         </div>
         <div class="col"></div>
       </div>
