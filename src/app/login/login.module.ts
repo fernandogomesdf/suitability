@@ -1,3 +1,4 @@
+import { HeaderModule } from './../header/header.module';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,8 @@ import { InputTextModule } from 'primeng/inputtext';
     PanelModule,
     InputTextModule,
     ButtonModule,
-    PasswordModule
+    PasswordModule,
+    HeaderModule
   ],
   declarations: [LoginPage]
 })

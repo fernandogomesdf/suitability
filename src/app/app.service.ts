@@ -24,8 +24,8 @@ export class AppService {
 
   getServerHostPort() {
     let serverHostPort = location.protocol + '//localhost:8080/suitability';
-    if ('4200' !== location.port) { // local
-      serverHostPort = location.protocol + '//' + location.hostname + ':' + location.port + '/agendador';
+    if ('8100' !== location.port && '4200' !== location.port) { // local
+      serverHostPort = location.protocol + '//' + location.hostname + ':' + location.port + '/suitability';
     }
     return serverHostPort;
   }
@@ -81,36 +81,15 @@ export class AppService {
   }
 
   request(url: string, data: any, verbo: VerboHttp): Observable<any> {
-    const token = sessionStorage.getItem('token');
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token
-      })
-    };
-
-    let response$;
-    if (verbo === VerboHttp.GET) {
-      response$ = this.getMethodoHttp(verbo)(this.getServerHostPort() + url, httpOptions).pipe(
-        map(response => {
-          try {
-            return response;
-          }
-          catch (error) { return response; }
-        }),
-        share()
-      );
-    } else {
-      response$ = this.getMethodoHttp(verbo)(this.getServerHostPort() + url, data, httpOptions).pipe(
-        map(response => {
-          try {
-            return response;
-          }
-          catch (error) { return response; }
-        }),
-        share()
-      );
-    }
+    const response$ = this.chamarUrl(this.getServerHostPort() + url, data, verbo).pipe(
+      map(response => response),
+      share()
+    );
+    response$.subscribe({
+      error: (err) => {
+        this.tratarErro(err);
+      }
+    });
     return response$;
   }
 
@@ -118,18 +97,25 @@ export class AppService {
     this.messageService.add({ severity, summary, detail });
   }
 
-  private getMethodoHttp(verbo: VerboHttp) {
+  private chamarUrl(url: string, data: any, verbo: VerboHttp): Observable<any> {
+    const token = sessionStorage.getItem('token');
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token
+      })
+    };
     switch (verbo) {
       case VerboHttp.PUT:
-        return this.http.put;
+        return this.http.put(url, data, httpOptions);
       case VerboHttp.GET:
-        return this.http.get;
+        return this.http.get(url, httpOptions);
       case VerboHttp.POST:
-        return this.http.post;
+        return this.http.post(url, data, httpOptions);
       case VerboHttp.PATCH:
-        return this.http.patch;
+        return this.http.patch(url, data, httpOptions);
       case VerboHttp.DELETE:
-        return this.http.delete;
+        return this.http.delete(url, httpOptions);
       default:
         break;
     }
