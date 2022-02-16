@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -9,15 +9,16 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 export class LoginPage implements OnInit {
 
   formulario: any = {};
-  faBookmark = faBookmark;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   login() { }
 
-  cadastro() { }
+  cadastro() {
+    this.router.navigate(['/cadastro']);
+  }
 
 }

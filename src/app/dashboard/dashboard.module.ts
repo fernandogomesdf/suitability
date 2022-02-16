@@ -5,18 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ClientePageRoutingModule } from './cliente-routing.module';
+import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
-import { ClientePage } from './cliente.page';
+import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ClientePageRoutingModule
+    DashboardPageRoutingModule
   ],
-  declarations: [ClientePage, HeaderComponent],
+  declarations: [DashboardPage, HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ClientePageModule { }
+export class DashboardPageModule { }

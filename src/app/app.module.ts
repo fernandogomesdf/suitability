@@ -1,3 +1,4 @@
+import { HeaderComponent } from './header/header.component';
 import { AppService } from './app.service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
