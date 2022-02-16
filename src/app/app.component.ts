@@ -10,8 +10,15 @@ export class AppComponent {
     { title: 'Suitability', url: '/suitability', icon: 'reader' },
     { title: 'Clientes', url: '/cliente', icon: 'person' },
     { title: 'Configurações', url: '/configuracao', icon: 'settings' },
-    { title: 'Sair', url: '/folder/Spam', icon: 'power' },
+    { title: 'Sair', url: '/login', icon: 'power', logout: true },
   ];
 
   constructor() { }
+
+  clicou(index) {
+    const item = this.appPages[index];
+    if (item.logout) {
+      sessionStorage.clear();
+    }
+  }
 }
