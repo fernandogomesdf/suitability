@@ -1,3 +1,4 @@
+import { HeaderModule } from './../header/header.module';
 import { HeaderComponent } from './../header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,8 +15,9 @@ import { ConfiguracaoPage } from './configuracao.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ConfiguracaoPageRoutingModule
+    ConfiguracaoPageRoutingModule,
+    HeaderModule
   ],
-  declarations: [ConfiguracaoPage, HeaderComponent]
+  declarations: [ConfiguracaoPage]
 })
 export class ConfiguracaoPageModule { }

@@ -1,3 +1,4 @@
+import { HeaderModule } from './../header/header.module';
 import { HeaderComponent } from './../header/header.component';
 import { AppService } from './../app.service';
 import { MessageService } from 'primeng/api';
@@ -28,9 +29,10 @@ import { ToastModule } from 'primeng/toast';
     InputTextModule,
     PasswordModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    HeaderModule
   ],
-  declarations: [CadastroPage, HeaderComponent],
+  declarations: [CadastroPage],
   providers: [MessageService, AppService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

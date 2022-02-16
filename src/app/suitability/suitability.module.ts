@@ -1,5 +1,5 @@
+import { HeaderModule } from './../header/header.module';
 import { ToastModule } from 'primeng/toast';
-import { HeaderComponent } from './../header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -32,8 +32,9 @@ import { SuitabilityPage } from './suitability.page';
     RadioButtonModule,
     InputTextModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    HeaderModule
   ],
-  declarations: [SuitabilityPage, HeaderComponent]
+  declarations: [SuitabilityPage]
 })
 export class SuitabilityPageModule { }

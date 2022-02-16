@@ -1,3 +1,4 @@
+import { HeaderModule } from './../header/header.module';
 import { HeaderComponent } from './../header/header.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,9 +15,10 @@ import { DashboardPage } from './dashboard.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    DashboardPageRoutingModule,
+    HeaderModule
   ],
-  declarations: [DashboardPage, HeaderComponent],
+  declarations: [DashboardPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DashboardPageModule { }

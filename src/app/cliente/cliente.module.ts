@@ -1,4 +1,4 @@
-import { HeaderComponent } from './../header/header.component';
+import { HeaderModule } from './../header/header.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,9 +14,10 @@ import { ClientePage } from './cliente.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ClientePageRoutingModule
+    ClientePageRoutingModule,
+    HeaderModule
   ],
-  declarations: [ClientePage, HeaderComponent],
+  declarations: [ClientePage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ClientePageModule { }
