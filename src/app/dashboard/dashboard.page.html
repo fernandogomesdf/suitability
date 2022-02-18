@@ -1,5 +1,59 @@
 <app-header></app-header>
 
 <ion-content>
+  <div class="p-2">
+    <p-card>
 
+      <div class="grid">
+        <div class="col">
+          <p-card header="Últimos cadastros">
+            18/02/22 - Fernando Gomes
+            <br><a href="mailto:fernando.gomes@gmail.com">fernando.gomes@gmail.com</a>
+            <br> (61) 97654-8866<br><br>
+
+            <span class="p-buttonset">
+              <button pButton type="button" icon="pi pi-user-edit" class="p-button-raised p-button-rounded"></button>
+              <button pButton type="button" icon="pi pi-file" class="p-button-raised p-button-rounded"></button>
+              <button pButton type="button" icon="pi pi-external-link"
+                class="p-button-raised p-button-rounded"></button>
+            </span>
+
+            <br><br>
+            18/02/22 - Israel Paulino
+            <br><a href="mailto:fernando.gomes@gmail.com">israel.paulino@gmail.com</a>
+            <br> (61) 97677-4433<br><br>
+
+            <span class="p-buttonset">
+              <button pButton type="button" icon="pi pi-user-edit" class="p-button-raised p-button-rounded"></button>
+              <button pButton type="button" icon="pi pi-file" class="p-button-raised p-button-rounded"></button>
+              <button pButton type="button" icon="pi pi-external-link"
+                class="p-button-raised p-button-rounded"></button>
+            </span>
+          </p-card>
+
+        </div>
+        <div class="col">
+          <p-card header="Clientes">
+            1349 Ativos<br>
+            23 Inativos
+          </p-card>
+          <br>
+          <p-card header="Contratos">
+            328 Ativos<br>
+            317 Expirados<br>
+            28 A Expirar
+          </p-card>
+        </div>
+        <div class="col">
+          <div style="width: 400px;">
+            <p-chart type="doughnut" [data]="data" [options]="chartOptions"></p-chart>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </p-card>
+  </div>
 </ion-content>
