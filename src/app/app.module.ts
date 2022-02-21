@@ -1,7 +1,7 @@
 import { LoginGuard } from './guards/login.guard';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AppService } from './app.service';
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -40,7 +40,7 @@ export function jwtOptionsFactory() {
         useFactory: jwtOptionsFactory
       }
     })],
-  providers: [MessageService, AppService, {provide: LocationStrategy, useClass: HashLocationStrategy}, LoginGuard],
+  providers: [MessageService, AppService, ConfirmationService, {provide: LocationStrategy, useClass: HashLocationStrategy}, LoginGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
