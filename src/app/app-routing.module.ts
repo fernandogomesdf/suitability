@@ -35,7 +35,11 @@ const routes: Routes = [
     path: 'configuracao',
     loadChildren: () => import('./configuracao/configuracao.module').then(m => m.ConfiguracaoPageModule),
     canActivate: [LoginGuard]
+  },  {
+    path: 'funcionario',
+    loadChildren: () => import('./funcionario/funcionario.module').then( m => m.FuncionarioPageModule)
   }
+
 
 
 ];

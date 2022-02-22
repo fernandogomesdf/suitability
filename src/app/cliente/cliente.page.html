@@ -2,7 +2,7 @@
 
 <ion-content>
   <div class="p-2">
-    <p-card>
+    <p-card header="Clientes">
 
       <p-table #dt [columns]="cols" [value]="valores" [paginator]="true" [lazy]="true" [rows]="10"
         (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="loading">
@@ -12,7 +12,7 @@
             <input type="text" pInputText size="50" placeholder="Busca" (input)="dt.filterGlobal($event, 'contains')"
               style="width:auto">
             &nbsp;&nbsp;
-            <button pButton type="button" class="p-button-raised" icon="fa fa-plus" (click)="novo()"
+            <button pButton type="button" class="p-button-raised" icon="pi pi-plus" (click)="novo()"
               label="Novo"></button>
           </div>
         </ng-template>
@@ -21,7 +21,6 @@
             <th *ngFor="let col of columns">
               {{col.header}}
             </th>
-            <th>Ações</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">

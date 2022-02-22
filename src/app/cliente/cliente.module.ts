@@ -1,3 +1,4 @@
+import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { HeaderModule } from './../header/header.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -11,6 +12,7 @@ import { ClientePageRoutingModule } from './cliente-routing.module';
 import { ClientePage } from './cliente.page';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { DialogModule } from 'primeng/dialog';
     HeaderModule,
     CardModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    InputTextModule,
+    ButtonModule
   ],
   declarations: [ClientePage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
