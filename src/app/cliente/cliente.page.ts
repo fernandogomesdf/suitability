@@ -13,13 +13,11 @@ export class ClientePage implements OnInit {
   @ViewChild('dt', { static: true }) dataTable: Table;
 
   cols: any[];
-  valores: any[];
-  categorias: SelectItem[] = [];
+  entidades: any[];
+  entidade: any;
   totalRecords: number;
   loading: boolean;
   display: boolean;
-  entidade: any;
-  mensagensValidacao: string[] = [];
   tituloDialog;
 
   constructor(private appService: AppService, private confirmationService: ConfirmationService) { }
@@ -48,12 +46,12 @@ export class ClientePage implements OnInit {
     if (this.entidade.id) {
       this.appService.request('/cliente/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
-        this.appService.msgSucesso('Cliente alterado com sucesso!');
+        this.appService.msgSucesso('Registro alterado com sucesso!');
       });
     } else {
       this.appService.request('/cliente/inserir', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
-        this.appService.msgSucesso('Cliente incluído com sucesso!');
+        this.appService.msgSucesso('Registro incluído com sucesso!');
       });
     }
   }
@@ -70,7 +68,7 @@ export class ClientePage implements OnInit {
   carregarDados(event: LazyLoadEvent) {
     this.loading = true;
     this.appService.request('/cliente/buscar', event, VerboHttp.POST).subscribe(data => {
-      this.valores = data.entidade;
+      this.entidades = data;
       this.totalRecords = data.totalRecords;
       this.loading = false;
     });

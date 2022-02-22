@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Dashboard', url: '/dashboard', icon: 'desktop' },
     { title: 'Suitability', url: '/suitability', icon: 'reader' },
     { title: 'Clientes', url: '/cliente', icon: 'person' },
-    { title: 'Funcionários', url: '/funcionario', icon: 'id-card' },
+    { title: 'Consultores', url: '/funcionario', icon: 'id-card' },
     { title: 'Configurações', url: '/configuracao', icon: 'settings' },
     { title: 'Sair', url: '/login', icon: 'power', logout: true },
   ];

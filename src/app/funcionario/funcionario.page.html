@@ -1,9 +1,93 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>funcionario</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content>
+  <div class="p-2">
+    <p-card header="Consultores">
 
+      <p-table #dt [columns]="cols" [value]="entidades" [paginator]="true" [lazy]="true" [rows]="10"
+        (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="false">
+        <ng-template pTemplate="caption">
+          <div style="text-align: left">
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Busca" (input)="dt.filterGlobal($event, 'contains')"
+              style="width:auto">
+            &nbsp;&nbsp;
+            <button pButton type="button" class="p-button-raised" icon="pi pi-plus" (click)="novo()"
+              label="Novo"></button>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns">
+              {{col.header}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr>
+            <td *ngFor="let col of columns">
+              <div *ngIf="col.field === 'categoria'; else elseBlock">{{rowData['categoria'].nome}}</div>
+              <ng-template #elseBlock>
+                {{ col.type ? col.type.transform(rowData[col.field], col.arg1, col.arg2, col.arg3) : rowData[col.field]
+                }}
+              </ng-template>
+            </td>
+            <td>
+              <center>
+                <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton
+                  icon="fa fa-edit" title="Editar"></button>
+                &nbsp;
+                <button type="button" (click)="confirmaExcluir(rowData)" class="p-button-raised p-button-danger" pButton
+                  icon="fa fa-trash" title="Excluir"></button>
+              </center>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+      <p-dialog [header]="entidade?.id ? 'Editar Consultor':'Novo Consultor'" [maximizable]="true" [modal]="true"
+        [(visible)]="display" [contentStyle]="{'overflow':'visible'}">
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="nomeEmpresa" type="text" [(ngModel)]="entidade.nome" pInputText size="50" />
+            <label for="nomeEmpresa">Nome do Cnsultor</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="email" type="text" [(ngModel)]="entidade.email" pInputText size="50" />
+            <label for="email">E-mail</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="cpf" type="text" [(ngModel)]="entidade.cpf" pInputText size="30" />
+            <label for="cpf">CPF</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <p-checkbox name="gerar" value="true" [(ngModel)]="entidade.gerar"></p-checkbox> gerar senha aleatória
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="senha" type="text" [(ngModel)]="entidade.senha" pInputText size="30" />
+            <label for="senha">Senha</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="repitasenha" type="text" [(ngModel)]="entidade.repitasenha" pInputText size="30" />
+            <label for="repitasenha">Repita a senha</label>
+          </span>
+        </div>
+        <p-footer>
+          <button pButton (click)="cancelar()" type="button" label="Cancelar" icon="pi pi-ban"
+            class="p-button-raised p-button-secondary"></button>
+          <button pButton (click)="salvar()" type="button" label="Salvar" icon="pi pi-save"
+            class="p-button-raised"></button>
+        </p-footer>
+      </p-dialog>
+      {{entidade | json}}
+    </p-card>
+  </div>
 </ion-content>

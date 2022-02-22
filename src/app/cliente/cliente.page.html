@@ -4,7 +4,7 @@
   <div class="p-2">
     <p-card header="Clientes">
 
-      <p-table #dt [columns]="cols" [value]="valores" [paginator]="true" [lazy]="true" [rows]="10"
+      <p-table #dt [columns]="cols" [value]="entidades" [paginator]="true" [lazy]="true" [rows]="10"
         (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="loading">
         <ng-template pTemplate="caption">
           <div style="text-align: left">

@@ -1,4 +1,11 @@
-import { NgModule } from '@angular/core';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { HeaderModule } from './../header/header.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,8 +20,16 @@ import { FuncionarioPage } from './funcionario.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FuncionarioPageRoutingModule
+    FuncionarioPageRoutingModule,
+    HeaderModule,
+    TableModule,
+    ButtonModule,
+    InputTextModule,
+    DialogModule,
+    CardModule,
+    CheckboxModule
   ],
-  declarations: [FuncionarioPage]
+  declarations: [FuncionarioPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class FuncionarioPageModule {}
+export class FuncionarioPageModule { }
