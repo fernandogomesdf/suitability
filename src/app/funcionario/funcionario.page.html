@@ -61,24 +61,26 @@
         </div>
         <div class="pb-5">
           <span class="p-float-label">
-            <input id="cpf" type="text" [(ngModel)]="entidade.cpf" pInputText size="30" />
+            <p-inputMask id="cpf" [(ngModel)]="entidade.cpf" mask="999.999.999-99"></p-inputMask>
             <label for="cpf">CPF</label>
           </span>
         </div>
         <div class="pb-5">
           <p-checkbox name="gerar" value="true" [(ngModel)]="entidade.gerar"></p-checkbox> gerar senha aleatória
         </div>
-        <div class="pb-5">
-          <span class="p-float-label">
-            <input id="senha" type="text" [(ngModel)]="entidade.senha" pInputText size="30" />
-            <label for="senha">Senha</label>
-          </span>
-        </div>
-        <div class="pb-5">
-          <span class="p-float-label">
-            <input id="repitasenha" type="text" [(ngModel)]="entidade.repitasenha" pInputText size="30" />
-            <label for="repitasenha">Repita a senha</label>
-          </span>
+        <div *ngIf="entidade.gerar[0] !== 'true'">
+          <div class="pb-5">
+            <span class="p-float-label">
+              <input id="senha" type="text" [(ngModel)]="entidade.senha" pInputText size="30" />
+              <label for="senha">Senha</label>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input id="repitasenha" type="text" [(ngModel)]="entidade.repitasenha" pInputText size="30" />
+              <label for="repitasenha">Repita a senha</label>
+            </span>
+          </div>
         </div>
         <p-footer>
           <button pButton (click)="cancelar()" type="button" label="Cancelar" icon="pi pi-ban"
@@ -87,7 +89,6 @@
             class="p-button-raised"></button>
         </p-footer>
       </p-dialog>
-      {{entidade | json}}
     </p-card>
   </div>
 </ion-content>

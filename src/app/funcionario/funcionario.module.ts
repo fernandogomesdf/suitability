@@ -4,6 +4,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { InputMaskModule } from 'primeng/inputmask';
 import { HeaderModule } from './../header/header.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ import { FuncionarioPage } from './funcionario.page';
     InputTextModule,
     DialogModule,
     CardModule,
-    CheckboxModule
+    CheckboxModule,
+    InputMaskModule
   ],
   declarations: [FuncionarioPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
