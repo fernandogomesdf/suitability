@@ -25,21 +25,15 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
           <tr>
-            <td *ngFor="let col of columns">
-              <div *ngIf="col.field === 'categoria'; else elseBlock">{{rowData['categoria'].nome}}</div>
-              <ng-template #elseBlock>
-                {{ col.type ? col.type.transform(rowData[col.field], col.arg1, col.arg2, col.arg3) : rowData[col.field]
-                }}
-              </ng-template>
-            </td>
+            <td>{{rowData.nome}}</td>
+            <td>{{rowData.email}}</td>
+            <td>{{rowData.cpf}}</td>
             <td>
-              <center>
-                <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton
-                  icon="fa fa-edit" title="Editar"></button>
-                &nbsp;
-                <button type="button" (click)="confirmaExcluir(rowData)" class="p-button-raised p-button-danger" pButton
-                  icon="fa fa-trash" title="Excluir"></button>
-              </center>
+              <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton icon="fa fa-edit"
+                title="Editar"></button>
+              &nbsp;
+              <button type="button" (click)="confirmaExcluir(rowData)" class="p-button-raised p-button-danger" pButton
+                icon="fa fa-trash" title="Excluir"></button>
             </td>
           </tr>
         </ng-template>

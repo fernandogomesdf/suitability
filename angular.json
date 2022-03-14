@@ -37,10 +37,11 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [
-              
+
             ],
             "aot": false,
             "vendorChunk": true,

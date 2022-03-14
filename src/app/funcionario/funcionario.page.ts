@@ -43,12 +43,12 @@ export class FuncionarioPage implements OnInit {
 
   salvar() {
     if (this.entidade.id) {
-      this.appService.request('/funcionario/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
         this.appService.msgSucesso('Registro alterado com sucesso!');
       });
     } else {
-      this.appService.request('/funcionario/inserir', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/inserir-consultor', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
         this.appService.msgSucesso('Registro incluído com sucesso!');
       });
@@ -66,7 +66,7 @@ export class FuncionarioPage implements OnInit {
 
   carregarDados(event: LazyLoadEvent) {
     this.loading = true;
-    this.appService.request('/funcionario/buscar', event, VerboHttp.POST).subscribe(data => {
+    this.appService.request('/usuario/buscar-consultores', event, VerboHttp.POST).subscribe(data => {
       this.entidades = data;
       this.totalRecords = data.totalRecords;
       this.loading = false;
@@ -77,7 +77,7 @@ export class FuncionarioPage implements OnInit {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir?',
       accept: () => {
-        this.appService.requestGet('/funcionario/excluir/' + item.id).subscribe(data => {
+        this.appService.requestGet('/usuario/excluir/' + item.id).subscribe(data => {
           if (data.deletedCount > 0) {
             this.appService.msgSucesso('Registro excluído com sucesso!');
             this.dataTable.reset();

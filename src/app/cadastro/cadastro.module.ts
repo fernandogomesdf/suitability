@@ -1,5 +1,4 @@
 import { HeaderModule } from './../header/header.module';
-import { HeaderComponent } from './../header/header.component';
 import { AppService } from './../app.service';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
