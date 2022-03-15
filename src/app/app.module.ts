@@ -1,13 +1,14 @@
+/* eslint-disable max-len */
 import { LoginGuard } from './guards/login.guard';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AppService } from './app.service';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
+import { IonicModule } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +41,7 @@ export function jwtOptionsFactory() {
         useFactory: jwtOptionsFactory
       }
     })],
-  providers: [MessageService, AppService, ConfirmationService, {provide: LocationStrategy, useClass: HashLocationStrategy}, LoginGuard],
+  providers: [MessageService, AppService, ConfirmationService, { provide: LocationStrategy, useClass: HashLocationStrategy }, LoginGuard, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

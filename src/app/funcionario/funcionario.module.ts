@@ -9,7 +9,7 @@ import { HeaderModule } from './../header/header.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { IonicModule } from '@ionic/angular';
 
 import { FuncionarioPageRoutingModule } from './funcionario-routing.module';
@@ -29,7 +29,8 @@ import { FuncionarioPage } from './funcionario.page';
     DialogModule,
     CardModule,
     CheckboxModule,
-    InputMaskModule
+    InputMaskModule,
+    ConfirmDialogModule
   ],
   declarations: [FuncionarioPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

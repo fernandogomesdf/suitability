@@ -45,12 +45,16 @@ export class FuncionarioPage implements OnInit {
     if (this.entidade.id) {
       this.appService.request('/usuario/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
-        this.appService.msgSucesso('Registro alterado com sucesso!');
+        if (data.id) {
+          this.appService.msgSucesso('Registro alterado com sucesso!');
+        }
       });
     } else {
       this.appService.request('/usuario/inserir-consultor', this.entidade, VerboHttp.POST).subscribe(data => {
         this.fecharEAtualizar();
-        this.appService.msgSucesso('Registro incluído com sucesso!');
+        if (data.id) {
+          this.appService.msgSucesso('Registro incluído com sucesso!');
+        }
       });
     }
   }
