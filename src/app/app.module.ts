@@ -7,7 +7,6 @@ import { ToastModule } from 'primeng/toast';
 import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { IonicModule } from '@ionic/angular';
 
 import { AppComponent } from './app.component';

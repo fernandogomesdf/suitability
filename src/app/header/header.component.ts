@@ -1,3 +1,4 @@
+import { AppService } from './../app.service';
 import { LoginGuard } from './../guards/login.guard';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public loginGuard: LoginGuard) { }
+  constructor(public appService: AppService, public loginGuard: LoginGuard) { }
 
   ngOnInit() { }
 }

@@ -65,6 +65,7 @@ export class FuncionarioPage implements OnInit {
 
   selecionaEditar(item) {
     this.entidade = Object.assign({}, item);
+    this.entidade.gerar = ['true'];
     this.display = true;
   }
 
@@ -81,21 +82,21 @@ export class FuncionarioPage implements OnInit {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir?',
       accept: () => {
-        this.appService.requestGet('/usuario/excluir/' + item.id).subscribe(data => {
-          if (data.deletedCount > 0) {
-            this.appService.msgSucesso('Registro excluído com sucesso!');
-            this.dataTable.reset();
-          }
-        });
-      },
-      reject: () => {
-      }
-    });
+        this.appService.request('/usuario/excluir', item.id, VerboHttp.DELETE).subscribe(data => {
+          if (data.id) {
+          this.appService.msgSucesso('Registro excluído com sucesso!');
+          this.dataTable.reset();
+        }
+      });
+  },
+  reject: () => {
+  }
+});
   }
 
   private fecharEAtualizar() {
-    this.ngOnInit();
-    this.dataTable.reset();
-    this.display = false;
-  }
+  this.ngOnInit();
+  this.dataTable.reset();
+  this.display = false;
+}
 }

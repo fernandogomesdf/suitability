@@ -12,7 +12,9 @@ import { MessageService } from 'primeng/api';
 @Injectable()
 export class AppService {
 
+
   @Output() blockEmitter = new EventEmitter();
+  public showProgress = false;
 
   constructor(private http: HttpClient, private router: Router, private messageService: MessageService) {
     this.router.events.subscribe((event) => {
@@ -81,6 +83,7 @@ export class AppService {
   }
 
   request(url: string, data: any, verbo: VerboHttp): Observable<any> {
+    this.showProgress = true;
     const response$ = this.chamarUrl(this.getServerHostPort() + url, data, verbo).pipe(
       map(response => response),
       share()
@@ -88,6 +91,10 @@ export class AppService {
     response$.subscribe({
       error: (err) => {
         this.tratarErro(err);
+        this.showProgress = false;
+      },
+      complete: () => {
+        this.showProgress = false;
       }
     });
     return response$;
@@ -101,9 +108,10 @@ export class AppService {
     const token = sessionStorage.getItem('token');
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        'Content-Type': typeof data == 'object' ? 'application/json' : 'text/plain',
         Authorization: 'Bearer ' + token
-      })
+      }),
+      body: data
     };
     switch (verbo) {
       case VerboHttp.PUT:

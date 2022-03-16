@@ -5,13 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header.component';
 import { NgModule } from '@angular/core';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
   imports: [
     IonicModule,
     ToastModule,
     CommonModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ProgressBarModule
   ],
   declarations: [
     HeaderComponent,
