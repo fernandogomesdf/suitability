@@ -38,7 +38,7 @@
           </tr>
         </ng-template>
       </p-table>
-      <p-dialog [header]="entidade?.id ? 'Editar Consultor':'Novo Consultor'" [maximizable]="true" [modal]="true"
+      <p-dialog [header]="entidade?.id ? 'Editar Consultor':'Novo Consultor'" [maximizable]="false" [modal]="true"
         [(visible)]="display" [contentStyle]="{'overflow':'visible'}">
         <div class="pb-5">
           <span class="p-float-label">
@@ -63,8 +63,7 @@
             label="alterar senha"></p-checkbox>
         </div>
         <div class="pb-5" *ngIf="!entidade?.id || (entidade?.alterarsenha && entidade?.alterarsenha[0])">
-          <p-checkbox name="gerar" value="true" [(ngModel)]="entidade.gerar"
-            label="gerar senha aleatória"></p-checkbox>
+          <p-checkbox name="gerar" value="true" [(ngModel)]="entidade.gerar" label="gerar senha aleatória"></p-checkbox>
         </div>
         <div *ngIf="entidade.gerar[0] !== 'true'">
           <div class="pb-5">

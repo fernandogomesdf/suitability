@@ -50,7 +50,7 @@ export class FuncionarioPage implements OnInit {
         }
       });
     } else {
-      this.appService.request('/usuario/inserir-consultor', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/inserir-consultor', this.entidade, VerboHttp.PUT).subscribe(data => {
         this.fecharEAtualizar();
         if (data.id) {
           this.appService.msgSucesso('Registro incluído com sucesso!');
