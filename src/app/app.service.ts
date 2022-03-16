@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable, Output, EventEmitter } from '@angular/core';
@@ -22,6 +23,10 @@ export class AppService {
         this.messageService.clear();
       }
     });
+  }
+
+  getLocalServerHostPort() {
+    return '//' + location.hostname + ':' + location.port;
   }
 
   getServerHostPort() {
@@ -84,10 +89,12 @@ export class AppService {
 
   request(url: string, data: any, verbo: VerboHttp): Observable<any> {
     this.showProgress = true;
-    const response$ = this.chamarUrl(this.getServerHostPort() + url, data, verbo).pipe(
-      map(response => response),
-      share()
-    );
+    const response$ = this.chamarUrl(url.startsWith('./')
+      ? (this.getLocalServerHostPort() + url.replace('./', '/'))
+      : this.getServerHostPort() + url, data, verbo).pipe(
+        map(response => response),
+        share()
+      );
     response$.subscribe({
       error: (err) => {
         this.tratarErro(err);

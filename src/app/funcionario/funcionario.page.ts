@@ -43,7 +43,7 @@ export class FuncionarioPage implements OnInit {
 
   salvar() {
     if (this.entidade.id) {
-      this.appService.request('/usuario/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/alterar-consultor', this.entidade, VerboHttp.PATCH).subscribe(data => {
         this.fecharEAtualizar();
         if (data.id) {
           this.appService.msgSucesso('Registro alterado com sucesso!');
@@ -84,19 +84,23 @@ export class FuncionarioPage implements OnInit {
       accept: () => {
         this.appService.request('/usuario/excluir', item.id, VerboHttp.DELETE).subscribe(data => {
           if (data.id) {
-          this.appService.msgSucesso('Registro excluído com sucesso!');
-          this.dataTable.reset();
-        }
-      });
-  },
-  reject: () => {
+            this.appService.msgSucesso('Registro excluído com sucesso!');
+            this.dataTable.reset();
+          }
+        });
+      },
+      reject: () => {
+      }
+    });
   }
-});
+
+  inputData(event: any) {
+    this.dataTable.filterGlobal(event.target.value, 'contains');
   }
 
   private fecharEAtualizar() {
-  this.ngOnInit();
-  this.dataTable.reset();
-  this.display = false;
-}
+    this.ngOnInit();
+    this.dataTable.reset();
+    this.display = false;
+  }
 }

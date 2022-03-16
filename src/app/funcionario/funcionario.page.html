@@ -5,12 +5,12 @@
     <p-card header="Consultores">
 
       <p-table #dt [columns]="cols" [value]="entidades" [paginator]="true" [lazy]="true" [rows]="10"
-        (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="false">
+        (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="false"
+        [globalFilterFields]="['nome']">
         <ng-template pTemplate="caption">
           <div style="text-align: left">
             <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-            <input type="text" pInputText size="50" placeholder="Busca" (input)="dt.filterGlobal($event, 'contains')"
-              style="width:auto">
+            <input type="text" pInputText size="50" placeholder="Busca" (input)="inputData($event)" style="width:auto">
             &nbsp;&nbsp;
             <button pButton type="button" class="p-button-raised" icon="pi pi-plus" (click)="novo()"
               label="Novo"></button>
