@@ -67,7 +67,7 @@ export class ClientePage implements OnInit {
 
   carregarDados(event: LazyLoadEvent) {
     this.loading = true;
-    this.appService.request('/cliente/buscar', event, VerboHttp.POST).subscribe(data => {
+    this.appService.request('/usuario/buscar-clientes', event, VerboHttp.POST).subscribe(data => {
       this.entidades = data;
       this.totalRecords = data.totalRecords;
       this.loading = false;

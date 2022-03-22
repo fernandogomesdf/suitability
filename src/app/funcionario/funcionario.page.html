@@ -5,7 +5,7 @@
     <p-card header="Consultores">
 
       <p-table #dt [columns]="cols" [value]="entidades" [paginator]="true" [lazy]="true" [rows]="10"
-        (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="false"
+        (onLazyLoad)="loadValoresLazy($event)" [totalRecords]="totalRecords" [loading]="loading"
         [globalFilterFields]="['nome']">
         <ng-template pTemplate="caption">
           <div style="text-align: left">
