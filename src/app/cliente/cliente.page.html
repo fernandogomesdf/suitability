@@ -25,41 +25,52 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
           <tr>
-            <td *ngFor="let col of columns">
-              <div *ngIf="col.field === 'categoria'; else elseBlock">{{rowData['categoria'].nome}}</div>
-              <ng-template #elseBlock>
-                {{ col.type ? col.type.transform(rowData[col.field], col.arg1, col.arg2, col.arg3) : rowData[col.field]
-                }}
-              </ng-template>
-            </td>
+            <td>{{rowData.nome}}</td>
+            <td>{{rowData.email}}</td>
+            <td>{{rowData.cpf}}</td>
+            <td>{{rowData.telefone}}</td>
             <td>
-              <center>
-                <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton
-                  icon="fa fa-edit" title="Editar"></button>
-                &nbsp;
-                <button type="button" (click)="confirmaExcluir(rowData)" class="p-button-raised p-button-danger" pButton
-                  icon="fa fa-trash" title="Excluir"></button>
-              </center>
+              <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton icon="fa fa-edit"
+                title="Editar"></button>
+              &nbsp;
+              <button type="button" (click)="selecionaEditar(rowData)" class="p-button-raised" pButton icon="fa fa-eye"
+                title="Detalhes"></button>
+              &nbsp;
+              <button type="button" class="p-button-raised" pButton icon="fa fa-file-text-o"
+                title="Suitability"></button>
+              &nbsp;
+              <button type="button" (click)="confirmaExcluir(rowData)" class="p-button-raised p-button-danger" pButton
+                icon="fa fa-trash" title="Excluir"></button>
             </td>
           </tr>
         </ng-template>
       </p-table>
 
-
-      <p-dialog [header]="entidade?.id ? 'Editar Serviço':'Novo Serviço'" [maximizable]="true" [modal]="true"
+      <p-dialog [header]="entidade?.id ? 'Editar Cliente':'Novo Cliente'" [maximizable]="false" [modal]="true"
         [(visible)]="display" [contentStyle]="{'overflow':'visible'}">
-        <table>
-          <tr>
-            <td><label>Nome*: </label></td>
-            <td>
-              <input type="text" [style]="{'width':'350px'}" [(ngModel)]="entidade.nome" pInputText />
-            </td>
-          </tr>
-        </table>
+        <br>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="nomeEmpresa" type="text" [(ngModel)]="entidade.nome" pInputText size="50" />
+            <label for="nomeEmpresa">Nome do Cliente</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <input id="email" type="text" [(ngModel)]="entidade.email" pInputText size="50" />
+            <label for="email">E-mail</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
+            <p-inputMask id="cpf" [(ngModel)]="entidade.cpf" mask="999.999.999-99"></p-inputMask>
+            <label for="cpf">CPF</label>
+          </span>
+        </div>
         <p-footer>
-          <button pButton (click)="cancelar()" type="button" label="Cancelar" icon="fa fa-ban"
+          <button pButton (click)="cancelar()" type="button" label="Cancelar" icon="pi pi-ban"
             class="p-button-raised p-button-secondary"></button>
-          <button pButton (click)="salvar()" type="button" label="Salvar" icon="fa fa-save"
+          <button pButton (click)="salvar()" type="button" label="Salvar" icon="pi pi-save"
             class="p-button-raised"></button>
         </p-footer>
       </p-dialog>

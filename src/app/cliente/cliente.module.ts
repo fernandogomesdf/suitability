@@ -1,3 +1,4 @@
+import { InputMaskModule } from 'primeng/inputmask';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { HeaderModule } from './../header/header.module';
@@ -25,7 +26,8 @@ import { InputTextModule } from 'primeng/inputtext';
     TableModule,
     DialogModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    InputMaskModule
   ],
   declarations: [ClientePage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

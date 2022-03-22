@@ -40,6 +40,7 @@
       </p-table>
       <p-dialog [header]="entidade?.id ? 'Editar Consultor':'Novo Consultor'" [maximizable]="false" [modal]="true"
         [(visible)]="display" [contentStyle]="{'overflow':'visible'}">
+        <br>
         <div class="pb-5">
           <span class="p-float-label">
             <input id="nomeEmpresa" type="text" [(ngModel)]="entidade.nome" pInputText size="50" />

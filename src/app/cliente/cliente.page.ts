@@ -26,8 +26,8 @@ export class ClientePage implements OnInit {
     this.cols = [
       { field: 'nome', header: 'Nome' },
       { field: 'email', header: 'E-mail' },
-      { field: 'telefone', header: 'Telefone' },
-      { field: 'consultor', header: 'Consultor' },
+      { field: 'telefone', header: 'CPF' },
+      { field: 'consultor', header: 'Telefone' },
       { field: 'acoes', header: 'Ações' }
     ];
     this.entidade = {};
