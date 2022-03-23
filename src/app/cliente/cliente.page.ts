@@ -44,12 +44,12 @@ export class ClientePage implements OnInit {
 
   salvar() {
     if (this.entidade.id) {
-      this.appService.request('/cliente/alterar', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/alterar-cliente', this.entidade, VerboHttp.PATCH).subscribe(data => {
         this.fecharEAtualizar();
         this.appService.msgSucesso('Registro alterado com sucesso!');
       });
     } else {
-      this.appService.request('/cliente/inserir', this.entidade, VerboHttp.POST).subscribe(data => {
+      this.appService.request('/usuario/inserir-cliente', this.entidade, VerboHttp.PUT).subscribe(data => {
         this.fecharEAtualizar();
         this.appService.msgSucesso('Registro incluído com sucesso!');
       });
@@ -78,8 +78,8 @@ export class ClientePage implements OnInit {
     this.confirmationService.confirm({
       message: 'Tem certeza que deseja excluir?',
       accept: () => {
-        this.appService.requestGet('/cliente/excluir/' + item.id).subscribe(data => {
-          if (data.deletedCount > 0) {
+        this.appService.request('/usuario/excluir', item.id, VerboHttp.DELETE).subscribe(data => {
+          if (data.id) {
             this.appService.msgSucesso('Registro excluído com sucesso!');
             this.dataTable.reset();
           }

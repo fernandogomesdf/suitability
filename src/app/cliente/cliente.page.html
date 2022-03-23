@@ -63,6 +63,12 @@
         </div>
         <div class="pb-5">
           <span class="p-float-label">
+            <p-inputMask id="telefone" [(ngModel)]="entidade.telefone" mask="+99 (99) 99999-9999"></p-inputMask>
+            <label for="telefone">Telefone</label>
+          </span>
+        </div>
+        <div class="pb-5">
+          <span class="p-float-label">
             <p-inputMask id="cpf" [(ngModel)]="entidade.cpf" mask="999.999.999-99"></p-inputMask>
             <label for="cpf">CPF</label>
           </span>
