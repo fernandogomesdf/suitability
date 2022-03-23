@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ConfirmationService, LazyLoadEvent, SelectItem } from 'primeng/api';
+import { ConfirmationService, LazyLoadEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { AppService, VerboHttp } from '../app.service';
 
